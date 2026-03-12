@@ -1,125 +1,59 @@
-# Generic Agent
+🎓 Student Learning Assistant (RAG)
 
-A highly modular, configuration-driven **RAG (Retrieval-Augmented Generation)** system built with Python and LangChain. This agent allows you to swap LLM providers, embedding models, and document processing strategies via a simple YAML configuration.
+A modular, configuration-driven Retrieval-Augmented Generation (RAG) system designed for the classroom. This assistant helps students ask questions about Machine Learning lessons while maintaining a Teacher-in-the-Loop moderation system to ensure accuracy and prevent hallucinations.
 
-The default configuration is set up as a **Bloom's Taxonomy Classifier**, designed to categorize learning objectives based on educational psychology standards.
+🚀 Key Features
 
-## 🚀 Key Features
+Human-in-the-Loop Moderation: Uncertain or "mixed" queries are automatically routed to a Teacher Dashboard for approval or manual correction.
 
-- **Config-First Design**: Define agent identity, prompts, model parameters, and RAG settings in a single `agent.yaml`.
-- **Modular Architecture**: Implements **Strategy** and **Factory** patterns for:
-  - **LLMs**: Easily switch between local models (via Ollama) and cloud providers.
-  - **Embeddings**: Support for HuggingFace Transformers and more.
-  - **Loaders**: Automatic detection of PDF and Markdown files.
-  - **Chunkers**: Intelligent splitting, including structure-aware Markdown chunking.
-- **Persistent Vector Store**: Uses ChromaDB to cache document embeddings for fast retrieval across sessions.
-- **Test Suite Integration**: Define test cases in YAML to verify agent performance instantly.
+Config-Driven Architecture: Manage agent behavior, model temperature, and RAG parameters via agent.yaml.
 
-## 🛠️ Project Structure
+Intelligent Classification: Built-in logic to distinguish between Machine Learning topics and irrelevant queries.
 
-```
-└── wbert-generic-agent/
-    ├── agent.yaml          # Main configuration (Prompts, Model, RAG settings)
-    ├── main.py             # Entry point for the application
-    ├── requirements.txt    # Project dependencies
-    └── src/
-        ├── agent/          # Core logic and config loading
-        ├── chunkers/       # Document splitting strategies
-        ├── domain/         # Data models (AgentResponse)
-        ├── embeddings/     # Vector embedding providers
-        ├── llm/            # LLM provider implementations (Ollama)
-        ├── loaders/        # PDF and Markdown file loaders
-        └── repositories/   # Vector store implementations (ChromaDB)
-```
+Persistent Knowledge Base: Uses ChromaDB to store and retrieve context from lesson materials (PDF/Text) with high efficiency.
 
----
+High-Performance LLM: Integrated with Groq (Llama 3.3 70B) for lightning-fast inference and high-quality responses.
 
-## 📋 Prerequisites
+🏗️ System Flow
 
-- **Python 3.10+**
-- **Ollama**: Required for running local LLMs (default: `qwen2.5:1.5b`).
-  - [Download Ollama](https://ollama.com/)
-  - Pull the default model:
-    ```bash
-    ollama pull qwen2.5:1.5b
-    ```
+Input: Student asks a question through the Streamlit interface.
 
----
+Retrieve & Classify: The agent searches the lesson.txt and classifies the intent.
 
-## ⚙️ Installation
+Decision:
 
-1. **Clone the repository**:
+Relevant: AI answers immediately with context.
 
-   ```bash
-   git clone <repository-url>
-   cd wbert-generic-agent
-   ```
+Irrelevant: AI politely declines to answer.
 
-2. **Create a virtual environment**:
+Needs Approval: AI drafts a response but holds it in a "Pending" state for teacher review.
 
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
+Approval: Once the teacher approves or edits the answer, the student's chat history updates with 100% confidence.
 
-3. **Install dependencies**:
+## 📂 Project Structure
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+└── student-learning-assistant/
 
----
+├── app.py # Main Student Chat interface
 
-## 📖 Usage
+├── agent.yaml # Core configuration (LLM, RAG settings, Prompts)
 
-### 1. Prepare your Context
+├── requirements.txt # Project dependencies
 
-Place a file named `context.md` or `context.pdf` in the root directory. This file contains the knowledge base the agent will use for retrieval. (For the default Bloom's agent, provide a document detailing the Bloom's Taxonomy levels).
+├── pages/
 
-### 2. Run the Agent
+│└── teacher_dashboard.py # Moderation panel for educators
 
-Execute the main script to run the test cases defined in `agent.yaml`:
+└── src/
 
-```bash
-python main.py
-```
+      ├── agent/ # Core RAG logic and Agent orchestration
 
-### 3. Custom Configuration
+      ├── llm/ # LLM provider implementations (Groq)
 
-You can create multiple YAML files for different agent behaviors. To run a specific one:
+      ├── repositories/ # Vector store implementations (ChromaDB)
 
-```bash
-python main.py --config my_custom_agent.yaml
-```
+      ├── domain/ # Data models (AgentResponse statuses)
 
----
+      ├── loaders/ # Document processing (PDF/Text)
 
-## 🔧 Configuration (agent.yaml)
-
-The system is controlled primarily through the YAML file. Key sections include:
-
-| Section      | Description                                                                           |
-| :----------- | :------------------------------------------------------------------------------------ |
-| `prompts`    | Define the system and human templates. Use `{context}` and `{input}` placeholders.    |
-| `model`      | Specify the provider (e.g., `ollama`) and model name.                                 |
-| `embeddings` | Choose the vectorization model (default: `all-MiniLM-L6-v2`).                         |
-| `rag`        | Fine-tune `chunk_size`, `overlap`, and `retriever_k` (number of documents retrieved). |
-| `test_cases` | A list of strings to run through the agent on startup.                                |
-
----
-
-## 🏗️ Design Patterns Used
-
-- **Strategy Pattern**: Used in `loaders`, `chunkers`, and `llm` modules to allow interchangeable algorithms/providers at runtime.
-- **Factory Pattern**: Centralizes the creation of complex objects based on the YAML configuration.
-- **Repository Pattern**: Abstracts the vector database (ChromaDB) to make the data layer independent of the business logic.
-
----
-
-## 🤝 Contributing
-
-1. Fork the project.
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
+      └── utils/ # Logging and session monitoring

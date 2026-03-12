@@ -39,16 +39,19 @@ class ChromaRepository(VectorStoreRepository):
         logger.info("Documents saved to Chroma successfully")
 
     def load(self) -> bool:
-        """Load existing Chroma vector store."""
-        if not self.exists():
-            return False
+        """Load existing Chroma vector store or initialize a new one."""
+        # Ensure the directory exists so Chroma doesn't complain
+        Path(self.persist_dir).mkdir(parents=True, exist_ok=True)
 
-        logger.info("Loading existing vector database...")
+        logger.info(f"Initializing vector database at {self.persist_dir}...")
+        
+        # This will either load existing files or create a fresh DB in that folder
         self._vectorstore = Chroma(
             persist_directory=self.persist_dir,
             embedding_function=self.embeddings,
         )
-        logger.info("Vector database loaded successfully")
+        
+        logger.info("Vector database initialized successfully")
         return True
 
     def exists(self) -> bool:

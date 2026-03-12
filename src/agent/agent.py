@@ -26,6 +26,29 @@ class RAGAgent:
         repository: VectorStoreRepository,
         llm_provider: LLMProvider,
     ):
+        self.config = config
+        self.repository = repository
+        self.llm_provider = llm_provider
+
+        # --- SAFE INITIALIZATION ---
+        # Instead of self.repository._vectorstore._embedding_function (private/unstable),
+        # we check if the repository has a public 'embeddings' attribute.
+        if hasattr(self.repository, 'embeddings'):
+            embedding_function = self.repository.embeddings
+        elif hasattr(self.repository, '_vectorstore') and self.repository._vectorstore:
+            # Fallback for older versions
+            embedding_function = getattr(self.repository._vectorstore, "embedding_function", None)
+        else:
+            embedding_function = None
+
+        if not embedding_function:
+            logger.error("Could not find embedding function in repository!")
+            # Fallback to a default if necessary, or handle the error
+            
+        self.qa_memory = QAMemoryRepository(embedding_function)
+        self._setup_chain()
+
+        logger.info(f"Initialized agent: {config.name}")
         
         """
         Initialize the RAG agent with injected dependencies.
