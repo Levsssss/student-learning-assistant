@@ -1,0 +1,9 @@
+venv
+CLAUDE.md
+context.md
+context1.pdf
+results.md
+chroma_db
+__pycache__
+
+.env

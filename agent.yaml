@@ -1,0 +1,60 @@
+# Agent Configuration
+# This file defines the behavior of the RAG agent
+
+# Agent Configuration
+
+name: Classroom Learning Assistant
+description: Answers student questions using lesson materials and learns from teacher-approved responses.
+
+# Teacher authentication
+teacher:
+  password: "prof123"
+
+# Model settings
+model:
+  provider: "ollama"
+  name: "qwen2.5:1.5b"
+  temperature: 0.1
+
+# Embedding settings
+embeddings:
+  provider: "huggingface"
+  model: "all-MiniLM-L6-v2"
+
+# RAG settings
+rag:
+  context_file: "lesson.txt"
+  chunk_size: 1000
+  chunk_overlap: 200
+  retriever_k: 3
+  persist_dir: "./chroma_db"
+  use_md_headers: true
+
+# Prompts
+prompts:
+  system: |
+    You are an AI teaching assistant for Machine Learning.
+
+    Use the provided context to answer the question.
+
+    If the context does not contain the answer:
+    - You may still answer using general machine learning knowledge.
+    - Clearly explain the concept to help the student understand.
+
+    Do NOT say "this question is not related to the subject" if it is about machine learning.
+
+  human: |
+    Context:
+    {context}
+
+    Question:
+    {input}
+
+    Answer clearly and concisely:
+
+# Test cases
+test_cases:
+  - "What is supervised learning?"
+  - "What is supervised learning?"
+  - "How does logistic regression work?"
+  - "What is your favorite movie?"

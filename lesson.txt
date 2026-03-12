@@ -1,0 +1,117 @@
+Introduction to Machine Learning
+
+Machine Learning is a branch of Artificial Intelligence (AI) that enables computers to learn patterns from data and make decisions or predictions without being explicitly programmed for every task. Instead of following fixed rules, machine learning models improve their performance as they are exposed to more data.
+
+Machine learning is widely used in applications such as spam detection, recommendation systems, medical diagnosis, fraud detection, and image recognition.
+
+Types of Machine Learning
+
+Machine learning can be divided into three main categories: supervised learning, unsupervised learning, and reinforcement learning.
+
+Supervised Learning
+
+Supervised learning is a type of machine learning where the model is trained using labeled data. Labeled data means that each training example includes both the input and the correct output.
+
+For example, in email spam detection, emails are labeled as “spam” or “not spam.” The model learns the relationship between the input (email text) and the output (spam or not spam).
+
+Common supervised learning tasks include:
+
+Classification (e.g., spam detection, emotion recognition)
+
+Regression (e.g., predicting house prices)
+
+Examples of supervised learning algorithms include:
+
+Logistic Regression
+
+Support Vector Machines (SVM)
+
+Decision Trees
+
+Neural Networks
+
+Unsupervised Learning
+
+Unsupervised learning involves training a model on data that does not have labeled outputs. The goal is to discover hidden patterns or structures within the data.
+
+For example, customer segmentation groups customers with similar purchasing behavior without predefined categories.
+
+Common unsupervised learning techniques include:
+
+Clustering (e.g., K-Means)
+
+Dimensionality Reduction (e.g., Principal Component Analysis or PCA)
+
+Reinforcement Learning
+
+Reinforcement learning is a type of machine learning where an agent learns by interacting with an environment. The agent receives rewards or penalties based on its actions and learns to maximize long-term rewards.
+
+This approach is commonly used in robotics, game playing, and autonomous systems.
+
+Neural Networks
+
+Neural networks are computational models inspired by the human brain. They consist of layers of interconnected nodes called neurons.
+
+A basic neural network includes:
+
+An input layer
+
+One or more hidden layers
+
+An output layer
+
+Each neuron applies a weighted sum of inputs followed by an activation function. The network learns by adjusting weights during training using a process called backpropagation.
+
+Deep Learning
+
+Deep learning is a subset of machine learning that uses neural networks with many hidden layers. The term “deep” refers to the depth (number of layers) in the network.
+
+Deep learning models automatically learn complex patterns from large amounts of data. They are particularly powerful for tasks involving images, speech, and text.
+
+Examples of deep learning applications include:
+
+Facial expression recognition
+
+Image classification
+
+Speech recognition
+
+Natural language processing
+
+Deep learning typically requires large datasets and high computational power.
+
+Convolutional Neural Networks (CNN)
+
+Convolutional Neural Networks (CNNs) are a type of deep learning model designed specifically for image data.
+
+CNNs use convolutional layers to automatically detect important features such as edges, textures, and shapes. They are commonly used in:
+
+Facial recognition
+
+Emotion detection
+
+Object detection
+
+Medical image analysis
+
+CNNs are widely used in computer vision tasks.
+
+Model Evaluation
+
+Machine learning models are evaluated using performance metrics such as:
+
+Accuracy: The percentage of correct predictions.
+
+Precision: The proportion of true positive predictions among predicted positives.
+
+Recall: The proportion of true positives among actual positives.
+
+Confusion Matrix: A table used to visualize classification performance.
+
+High accuracy alone does not always mean the model performs well. Other metrics should also be considered.
+
+Summary
+
+Machine learning enables computers to learn from data and make predictions. Supervised learning uses labeled data, unsupervised learning discovers patterns without labels, and reinforcement learning learns through interaction.
+
+Deep learning is a powerful subset of machine learning that uses multi-layer neural networks and is especially effective for complex tasks like image and speech recognition.

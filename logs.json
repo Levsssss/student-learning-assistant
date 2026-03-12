@@ -1,0 +1,156 @@
+[
+    {
+        "timestamp": "2026-03-11 16:33:52",
+        "question": "What is Jollibee?",
+        "classification": "not_ml",
+        "response": "This question is not related to the machine learning lesson.",
+        "response_time": 0.66
+    },
+    {
+        "timestamp": "2026-03-11 16:34:18",
+        "question": "What is machine learning?",
+        "classification": "duplicate",
+        "response": "Machine learning is a subset of artificial intelligence that enables systems to learn from data without being explicitly programmed. It involves the use of algorithms and statistical models to identify patterns in data, which can then be used for making predictions or decisions. Machine learning models are trained on labeled datasets where each example consists of an input and its corresponding correct output label. The goal is to create a mapping function that accurately predicts outputs from inputs. Machine learning has applications in various fields such as spam detection, recommendation systems, medical diagnosis, fraud detection, image recognition, etc.",
+        "response_time": 0.3
+    },
+    {
+        "timestamp": "2026-03-11 16:34:50",
+        "question": "Compare lenet-5 with densenet",
+        "classification": "duplicate",
+        "response": "LeNet-5 and DenseNet are two different types of deep learning models used in computer vision tasks. LeNet-5 is a convolutional neural network (CNN) specifically designed for image classification tasks. It uses convolutional layers to detect features such as edges and textures, which are then used for classification. LeNet-5 is known for its simplicity and effectiveness in tasks like handwritten digit recognition.\n\nOn the other hand, DenseNet (Densely Connected Networks) is a type of deep learning model that is designed to handle large datasets and improve performance by connecting all layers in a dense manner. It is particularly effective for tasks that require processing large amounts of data, such as image recognition, speech recognition, and natural language processing. DenseNet is known for its ability to learn complex features from the entire dataset, rather than just the features learned in the first few layers.",
+        "response_time": 0.35
+    },
+    {
+        "timestamp": "2026-03-11 16:34:57",
+        "question": "Compare alexnet with resnet",
+        "classification": "duplicate",
+        "response": "ResNet and AlexNet are both convolutional neural networks (CNNs) used in deep learning, but they differ in their architecture and performance. AlexNet, introduced in 2012, was one of the first CNNs to achieve state-of-the-art results in image classification tasks. It used a 10-layer network with a fixed architecture, which was effective for image recognition tasks but not as flexible as ResNet.\n\nResNet, introduced in 2015, is a variant of AlexNet that addresses some of the limitations of the original network by introducing residual connections. ResNet uses shortcut connections that allow the network to learn more efficiently by bypassing the need for fully connected layers. This results in faster training times and better performance on various image classification tasks. ResNet has a more flexible architecture, allowing it to be adapted to different tasks and datasets, making it more versatile than AlexNet.",
+        "response_time": 0.06
+    },
+    {
+        "timestamp": "2026-03-11 16:35:05",
+        "question": "Compare lenet with alexnet",
+        "classification": "needs_approval",
+        "response": "LeNet and AlexNet are both deep learning models used for image recognition tasks. Here's a comparison:\n\n**LeNet (1998)**\n\n* Shallower network with 2 convolutional layers and 2 fully connected layers\n* Designed for handwritten digit recognition (MNIST dataset)\n* Uses average pooling and sigmoid activation functions\n* Smaller model size and fewer parameters\n\n**AlexNet (2012)**\n\n* Deeper network with 5 convolutional layers and 3 fully connected layers\n* Designed for large-scale image recognition (ImageNet dataset)\n* Uses max pooling and ReLU activation functions\n* Larger model size and more parameters (60 million)\n\nIn summary, AlexNet is a more complex and deeper network than LeNet, which allows it to learn more abstract features and achieve better performance on larger and more challenging image recognition tasks.",
+        "response_time": 1.8
+    },
+    {
+        "timestamp": "2026-03-11 16:35:56",
+        "question": "what is the difference between alexnet and densenet",
+        "classification": "needs_approval",
+        "response": "AlexNet and DenseNet are both deep neural network architectures, but they differ in their design and functionality:\n\n* **AlexNet**: Released in 2012, AlexNet is a convolutional neural network (CNN) that uses a traditional architecture with multiple convolutional and pooling layers, followed by fully connected layers. It was one of the first deep learning models to achieve state-of-the-art performance on the ImageNet Large Scale Visual Recognition Challenge (ILSVRC).\n* **DenseNet**: Released in 2017, DenseNet is a type of CNN that uses dense connectivity between layers, where each layer receives inputs from all previous layers. This design allows for more efficient feature extraction and reduces the number of parameters required. DenseNet is known for its ability to achieve high accuracy with fewer parameters and less computational cost.\n\nThe key differences between AlexNet and DenseNet are:\n\n* **Connectivity**: AlexNet uses traditional feedforward connections, while DenseNet uses dense connectivity between layers.\n* **Parameter efficiency**: DenseNet requires fewer parameters than AlexNet, making it more efficient in terms of computational cost and memory usage.\n* **Feature extraction**: DenseNet's dense connectivity allows for more effective feature extraction and reuse, leading to better performance on image classification tasks.",
+        "response_time": 1.46
+    },
+    {
+        "timestamp": "2026-03-11 20:56:57",
+        "question": "What is RAG?",
+        "classification": "duplicate",
+        "response": "RAG stands for Retrieval-Augmented Generation, which is a type of language model that combines the capabilities of a large language model (LLM) with a knowledge base or a knowledge graph. The LLM is used to generate text based on the input, while the knowledge base or knowledge graph is used to provide context and information that can help the LLM generate more accurate and relevant text. This approach is often used in applications such as language translation, summarization, and question answering, where the LLM can be used to generate text based on the input, while the knowledge base or knowledge graph can provide additional context and information to help the LLM generate more accurate and relevant text.",
+        "response_time": 1.41
+    },
+    {
+        "timestamp": "2026-03-11 20:57:12",
+        "question": "What is the best ice cream?",
+        "classification": "not_ml",
+        "response": "This question is not related to the machine learning lesson.",
+        "response_time": 1.64
+    },
+    {
+        "timestamp": "2026-03-11 20:57:31",
+        "question": "what is the difference between vggnet and densenet",
+        "classification": "needs_approval",
+        "response": "VGGNet and DenseNet are both Convolutional Neural Networks (CNNs) used for image classification tasks, but they differ in their architecture:\n\n1. **VGGNet**: It uses a simple, sequential architecture with multiple convolutional and pooling layers, followed by fully connected layers. Each layer is connected to the previous one in a linear fashion. VGGNet is known for its depth, with 16 or 19 layers, and its use of small convolutional filters (3x3).\n\n2. **DenseNet**: It introduces a dense connectivity pattern, where each layer is connected to every other layer in a feedforward fashion. This means that each layer receives feature maps from all previous layers, allowing for more efficient feature extraction and reuse. DenseNet is also deeper than traditional CNNs, but with fewer parameters due to its dense connectivity.\n\nIn summary, the key differences are:\n- **Connectivity pattern**: VGGNet has a linear connectivity, while DenseNet has a dense connectivity.\n- **Parameter efficiency**: DenseNet is more parameter-efficient than VGGNet.\n- **Feature extraction**: DenseNet's dense connectivity allows for more efficient feature extraction and reuse.",
+        "response_time": 2.01
+    },
+    {
+        "timestamp": "2026-03-11 21:26:47",
+        "question": "What is RAG?",
+        "classification": "duplicate",
+        "response": "RAG stands for Retrieval-Augmented Generation, which is a type of language model that combines the capabilities of a large language model (LLM) with a knowledge base or a knowledge graph. The LLM is used to generate text based on the input, while the knowledge base or knowledge graph is used to provide context and information that can help the LLM generate more accurate and relevant text. This approach is often used in applications such as language translation, summarization, and question answering, where the LLM can be used to generate text based on the input, while the knowledge base or knowledge graph can provide additional context and information to help the LLM generate more accurate and relevant text.",
+        "response_time": 0.47
+    },
+    {
+        "timestamp": "2026-03-11 21:39:34",
+        "question": "What is RAG?",
+        "classification": "duplicate",
+        "response": "RAG stands for Retrieval-Augmented Generation, which is a type of language model that combines the capabilities of a large language model (LLM) with a knowledge base or a knowledge graph. The LLM is used to generate text based on the input, while the knowledge base or knowledge graph is used to provide context and information that can help the LLM generate more accurate and relevant text. This approach is often used in applications such as language translation, summarization, and question answering, where the LLM can be used to generate text based on the input, while the knowledge base or knowledge graph can provide additional context and information to help the LLM generate more accurate and relevant text.",
+        "response_time": 0.25
+    },
+    {
+        "timestamp": "2026-03-11 21:40:50",
+        "question": "what is the difference between resnet and vggnet",
+        "classification": "needs_approval",
+        "response": "ResNet (Residual Network) and VGGNet (Visual Geometry Group Network) are both convolutional neural networks (CNNs) used for image classification tasks. The main differences between them are:\n\n1. **Architecture**: ResNet uses residual connections, which allow the network to learn much deeper representations than previously possible. VGGNet, on the other hand, uses a simpler architecture with a series of convolutional and pooling layers.\n2. **Depth**: ResNet can be much deeper than VGGNet, with some versions having over 100 layers. VGGNet typically has around 16-19 layers.\n3. **Performance**: ResNet has been shown to achieve better performance than VGGNet on many image classification tasks, especially on larger datasets.\n4. **Computational Cost**: ResNet requires more computational resources than VGGNet due to its deeper architecture.\n\nIn summary, ResNet is a more advanced and powerful architecture than VGGNet, but it also requires more computational resources. VGGNet is a simpler and more efficient architecture, but it may not perform as well as ResNet on complex tasks.",
+        "response_time": 2.14
+    },
+    {
+        "timestamp": "2026-03-11 21:41:33",
+        "question": "what is the best pizza?",
+        "classification": "not_ml",
+        "response": "This question is not related to the machine learning lesson.",
+        "response_time": 2.2
+    },
+    {
+        "timestamp": "2026-03-11 21:59:57",
+        "question": "What is RAG?",
+        "classification": "duplicate",
+        "response": "RAG stands for Retrieval-Augmented Generation, which is a type of language model that combines the capabilities of a large language model (LLM) with a knowledge base or a knowledge graph. The LLM is used to generate text based on the input, while the knowledge base or knowledge graph is used to provide context and information that can help the LLM generate more accurate and relevant text. This approach is often used in applications such as language translation, summarization, and question answering, where the LLM can be used to generate text based on the input, while the knowledge base or knowledge graph can provide additional context and information to help the LLM generate more accurate and relevant text.",
+        "response_time": 0.33
+    },
+    {
+        "timestamp": "2026-03-11 22:00:06",
+        "question": "What is the difference between vggnet and resnet",
+        "classification": "duplicate",
+        "response": "ResNet (Residual Network) and VGGNet (Visual Geometry Group Network) are both convolutional neural networks (CNNs) used for image classification tasks. The main differences between them are:\n\n1. **Architecture**: ResNet uses residual connections, which allow the network to learn much deeper representations than previously possible. VGGNet, on the other hand, uses a simpler architecture with a series of convolutional and pooling layers.\n2. **Depth**: ResNet can be much deeper than VGGNet, with some versions having over 100 layers. VGGNet typically has around 16-19 layers.\n3. **Performance**: ResNet has been shown to achieve better performance than VGGNet on many image classification tasks, especially on larger datasets.\n4. **Computational Cost**: ResNet requires more computational resources than VGGNet due to its deeper architecture.\n\nIn summary, ResNet is a more advanced and powerful architecture than VGGNet, but it also requires more computational resources. VGGNet is a simpler and more efficient architecture, but it may not perform as well as ResNet on complex tasks.",
+        "response_time": 0.03
+    },
+    {
+        "timestamp": "2026-03-11 22:00:19",
+        "question": "what is the difference between vggnet and alexnet",
+        "classification": "needs_approval",
+        "response": "VGGNet and AlexNet are both deep neural network architectures used for image classification tasks. The main differences between them are:\n\n1. **Depth**: VGGNet is deeper than AlexNet, with 16-19 layers compared to AlexNet's 8 layers.\n2. **Filter size**: VGGNet uses smaller filter sizes (3x3) throughout the network, while AlexNet uses larger filter sizes (11x11 and 5x5) in the earlier layers.\n3. **Number of parameters**: VGGNet has more parameters than AlexNet, which can make it more prone to overfitting.\n4. **Performance**: VGGNet generally performs better than AlexNet on image classification tasks, especially on larger datasets like ImageNet.\n\nOverall, VGGNet is a more complex and powerful architecture than AlexNet, but it also requires more computational resources and larger datasets to train effectively.",
+        "response_time": 2.5
+    },
+    {
+        "timestamp": "2026-03-11 22:02:20",
+        "question": "what is the best ice cream?",
+        "classification": "not_ml",
+        "response": "This question is not related to the machine learning lesson.",
+        "response_time": 0.82
+    },
+    {
+        "timestamp": "2026-03-11 22:44:15",
+        "question": "What is RAG?",
+        "classification": "duplicate",
+        "response": "RAG stands for Retrieval-Augmented Generation, which is a type of language model that combines the capabilities of a large language model (LLM) with a knowledge base or a knowledge graph. The LLM is used to generate text based on the input, while the knowledge base or knowledge graph is used to provide context and information that can help the LLM generate more accurate and relevant text. This approach is often used in applications such as language translation, summarization, and question answering, where the LLM can be used to generate text based on the input, while the knowledge base or knowledge graph can provide additional context and information to help the LLM generate more accurate and relevant text.",
+        "response_time": 0.59
+    },
+    {
+        "timestamp": "2026-03-11 22:44:30",
+        "question": "what ice cream should I eat?",
+        "classification": "not_ml",
+        "response": "This question is not related to the machine learning lesson.",
+        "response_time": 1.41
+    },
+    {
+        "timestamp": "2026-03-12 17:58:06",
+        "question": "What is RAG",
+        "classification": "duplicate",
+        "response": "RAG stands for Retrieval-Augmented Generation, which is a type of language model that combines the capabilities of a large language model (LLM) with a knowledge base or a knowledge graph. The LLM is used to generate text based on the input, while the knowledge base or knowledge graph is used to provide context and information that can help the LLM generate more accurate and relevant text. This approach is often used in applications such as language translation, summarization, and question answering, where the LLM can be used to generate text based on the input, while the knowledge base or knowledge graph can provide additional context and information to help the LLM generate more accurate and relevant text.",
+        "response_time": 2.59
+    },
+    {
+        "timestamp": "2026-03-12 17:58:11",
+        "question": "What is Embeddings",
+        "classification": "duplicate",
+        "response": "Embeddings refer to a technique where high-dimensional vectors are assigned to each item or concept in a dataset, allowing for efficient representation and comparison of these items or concepts within a lower-dimensional space. This process transforms raw data into a more manageable format that can be easily processed by machine learning models.\n\nIn the context of deep learning, embeddings are often used as input features for neural network layers. For example, when training a model to classify images, an embedding layer might take in pixel values from each image and map them into a lower-dimensional space where they can be compared using dot products or other similarity measures.\n\nThe key benefits of embeddings include:\n\n1. **Efficient Representation**: Embeddings allow for the representation of complex data points as vectors that are easier to process computationally.\n2. **Feature Learning**: The embedding layer learns features directly from raw input, such as images or text, without requiring manual feature engineering.\n3. **Similarity Measurement**: It provides a way to measure similarity between different items in the dataset by comparing their embeddings.\n\nIn deep learning models like Convolutional Neural Networks (CNNs) and Recurrent Neural Networks (RNNs), embedding layers are often used as part of the input layer, where each item or concept is represented by its corresponding vector. This allows these models to effectively learn from large amounts of data without needing explicit feature extraction.\n\nFor instance, in a CNN for image classification, an embedding layer might take pixel values and map them into a lower-dimensional space that can be used as inputs for the convolutional layers. Similarly, in a language model like Word2Vec or GloVe, each word is represented by its own vector based on the context it appears in.\n\nIn summary, embeddings are a powerful technique that simplifies complex data representation, enabling more efficient and effective learning of features within deep learning models.",
+        "response_time": 0.1
+    },
+    {
+        "timestamp": "2026-03-12 17:58:25",
+        "question": "What is the difference between an AI agent and a RAG",
+        "classification": "needs_approval",
+        "response": "There is no information in the provided context about a \"RAG\" (likely referring to a Retrieval-Augmented Generator). However, I can explain the difference between an AI agent and a Retrieval-Augmented Generator in general machine learning terms.\n\nAn AI agent is a program that uses artificial intelligence to perform tasks, make decisions, and interact with its environment. It can be a simple rule-based system or a complex machine learning model.\n\nA Retrieval-Augmented Generator (RAG) is a specific type of AI model that combines a retriever (e.g., a search engine) with a generator (e.g., a language model). The retriever fetches relevant information from a database or knowledge base, and the generator uses this information to produce output, such as text or answers to questions.\n\nIn summary, an AI agent is a broad term that encompasses various types of artificial intelligence systems, while a Retrieval-Augmented Generator is a specific type of AI model that combines retrieval and generation capabilities.",
+        "response_time": 2.55
+    }
+]
